@@ -23,4 +23,8 @@ public interface Board {
     Score getScore();
 
     void newGame();
+
+    void pauseGame() throws InterruptedException;
+
+    void quitGame();
 }

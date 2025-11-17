@@ -124,4 +124,15 @@ public class SimpleBoard implements Board {
         score.reset();
         createNewBrick();
     }
+
+    @Override
+    public void pauseGame() throws InterruptedException {
+        brickGenerator.wait();
+    }
+
+
+    @Override
+    public void quitGame() {
+        System.exit(0);
+    }
 }

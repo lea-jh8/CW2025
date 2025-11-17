@@ -1,8 +1,9 @@
 package com.comp2042;
 
+
 public class GameController implements InputEventListener {
 
-    private Board board = new SimpleBoard(25, 10);
+    private final Board board = new SimpleBoard(25, 10);
 
     private final GuiController viewGuiController;
 
@@ -62,4 +63,21 @@ public class GameController implements InputEventListener {
         board.newGame();
         viewGuiController.refreshGameBackground(board.getBoardMatrix());
     }
+
+    @Override
+    public void pauseGame() throws InterruptedException {
+        try {
+            board.pauseGame();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
+    @Override
+    public void quitGame() {
+        board.quitGame();
+    }
+
 }

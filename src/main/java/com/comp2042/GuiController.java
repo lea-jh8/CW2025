@@ -20,6 +20,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.util.Duration;
 
+import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -46,6 +47,8 @@ public class GuiController implements Initializable {
     private Rectangle[][] rectangles;
 
     private Timeline timeLine;
+
+    private Button pauseGame;
 
     private final BooleanProperty isPause = new SimpleBooleanProperty();
 
@@ -220,6 +223,7 @@ public class GuiController implements Initializable {
     }
 
     public void pauseGame(ActionEvent actionEvent) {
-        gamePanel.requestFocus();
+        timeLine.stop();
+        gamePanel
     }
 }
