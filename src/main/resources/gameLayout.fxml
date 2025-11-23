@@ -17,6 +17,7 @@
         </center>
     </BorderPane>
 
+
     <Group fx:id="groupNotification" layoutX="14" layoutY="203">
         <VBox alignment="CENTER">
             <GameOverPanel fx:id="gameOverPanel"/>
@@ -26,6 +27,5 @@
     <stylesheets>
         <URL value="@window_style.css"/>
     </stylesheets>
-    <Button layoutX="100" layoutY="30"/>
 
 </Pane>

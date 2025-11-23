@@ -222,8 +222,9 @@ public class GuiController implements Initializable {
         isGameOver.setValue(Boolean.FALSE);
     }
 
+
     public void pauseGame(ActionEvent actionEvent) {
         timeLine.stop();
-        gamePanel
+
     }
 }
