@@ -15,6 +15,8 @@ public class SimpleBoard implements Board {
     private int[][] currentGameMatrix;
     private Point currentOffset;
     private final Score score;
+    private boolean isPaused = false;
+    private boolean isGameOver = false;
 
     public SimpleBoard(int width, int height) {
         this.width = width;
@@ -126,13 +128,15 @@ public class SimpleBoard implements Board {
     }
 
     @Override
-    public void pauseGame() throws InterruptedException {
-        brickGenerator.wait();
+    public void pauseGame() {
+        this.isPaused = !this.isPaused;
     }
-
 
     @Override
     public void quitGame() {
-        System.exit(0);
+        if (this.isGameOver) {
+            return;
+        }
     }
+
 }

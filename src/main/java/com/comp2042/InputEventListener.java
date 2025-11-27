@@ -12,7 +12,7 @@ public interface InputEventListener {
 
     void createNewGame();
 
-    void pauseGame() throws InterruptedException;
+    void pauseGame();
 
     void quitGame();
 }

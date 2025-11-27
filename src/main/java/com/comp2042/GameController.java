@@ -7,6 +7,8 @@ public class GameController implements InputEventListener {
 
     private final GuiController viewGuiController;
 
+    private boolean isPaused = false;
+
     public GameController(GuiController c) {
         viewGuiController = c;
         board.createNewBrick();
@@ -65,14 +67,11 @@ public class GameController implements InputEventListener {
     }
 
     @Override
-    public void pauseGame() throws InterruptedException {
-        try {
+    public void pauseGame() {
+        if (this.isPaused){
             board.pauseGame();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
         }
     }
-
 
 
     @Override

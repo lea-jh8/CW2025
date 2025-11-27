@@ -24,7 +24,7 @@ public interface Board {
 
     void newGame();
 
-    void pauseGame() throws InterruptedException;
+    void pauseGame();
 
     void quitGame();
 }
