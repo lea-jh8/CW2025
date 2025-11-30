@@ -7,12 +7,10 @@ public class GameController implements InputEventListener {
 
     private final GuiController viewGuiController;
 
-    private boolean isPaused = false;
-
     public GameController(GuiController c) {
         viewGuiController = c;
-        board.createNewBrick();
         viewGuiController.setEventListener(this);
+        board.createNewBrick();
         viewGuiController.initGameView(board.getBoardMatrix(), board.getViewData());
         viewGuiController.bindScore(board.getScore().scoreProperty());
     }
@@ -21,23 +19,25 @@ public class GameController implements InputEventListener {
     public DownData onDownEvent(MoveEvent event) {
         boolean canMove = board.moveBrickDown();
         ClearRow clearRow = null;
+
         if (!canMove) {
             board.mergeBrickToBackground();
             clearRow = board.clearRows();
+
             if (clearRow.getLinesRemoved() > 0) {
                 board.getScore().add(clearRow.getScoreBonus());
             }
+
+
+            viewGuiController.refreshGameBackground(board.getBoardMatrix());
+            viewGuiController.refreshNextBrick(board.getViewData());
+
             if (board.createNewBrick()) {
                 viewGuiController.gameOver();
             }
 
-            viewGuiController.refreshGameBackground(board.getBoardMatrix());
-
-        } else {
-            if (event.getEventSource() == EventSource.USER) {
-                board.getScore().add(1);
-            }
         }
+
         return new DownData(clearRow, board.getViewData());
     }
 
@@ -59,6 +59,11 @@ public class GameController implements InputEventListener {
         return board.getViewData();
     }
 
+    @Override
+    public  ViewData getCurrentViewData() {
+        return board.getViewData();
+    }
+
 
     @Override
     public void createNewGame() {
@@ -68,11 +73,18 @@ public class GameController implements InputEventListener {
 
     @Override
     public void pauseGame() {
-        if (this.isPaused){
-            board.pauseGame();
-        }
+        board.pauseGame();
     }
 
+    @Override
+    public void continueGame(){
+        board.continueGame();
+    }
+
+    @Override
+    public void initGame() {
+        board.initGame();
+    }
 
     @Override
     public void quitGame() {

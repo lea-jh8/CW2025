@@ -11,7 +11,7 @@ public final class ViewData {
         this.brickData = brickData;
         this.xPosition = xPosition;
         this.yPosition = yPosition;
-        this.nextBrickData = nextBrickData;
+        this.nextBrickData = MatrixOperations.copy(nextBrickData);
     }
 
     public int[][] getBrickData() {

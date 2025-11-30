@@ -26,5 +26,9 @@ public interface Board {
 
     void pauseGame();
 
+    void continueGame();
+
     void quitGame();
+
+    void initGame();
 }

@@ -1,5 +1,5 @@
 .root {
-    -fx-background-image: url("background_image.png");
+    -fx-background-image: url("/background_image.png");
 }
 
 .nextBrick {
@@ -9,9 +9,9 @@
 }
 
 .gameBoard {
-    -fx-border-color: linear-gradient(#2A5058, #61a2b1);
-    -fx-border-width: 12px;
-    -fx-border-radius: 12px;
+    -fx-border-color: #2A5058;
+    -fx-border-width: 10px;
+    -fx-border-radius: 10px;
 }
 
 .nextBrickLabel {
@@ -30,7 +30,6 @@
     -fx-background-insets: 0, 1, 4, 5, 6;
     -fx-background-radius: 9, 8, 5, 4, 3;
     -fx-padding: 8;
-    /*-fx-font-family: "Helvetica";*/
     -fx-font-family: "Let's go Digital";
     -fx-font-size: 22px;
     -fx-font-weight: bold;
@@ -67,6 +66,26 @@
 .scoreClass{
     -fx-font-family: "Let's go Digital";
     -fx-font-size: 38;
-    -fx-fill: yellow;
-    -fx-text-fill: yellow;
+    -fx-fill: white;
+    -fx-text-fill: white;
+}
+
+
+.pauseMenu{
+    -fx-font-family: "Let's go Digital";
+    -fx-font-size: 20;
+    -fx-fill: white;
+    -fx-alignment: center;
+}
+
+.pausedTitle{
+    -fx-font-family: "Let's go Digital";
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+.menuButton{
+    -fx-font-family: "Let's go Digital";
+    -fx-font-size: 14;
 }
