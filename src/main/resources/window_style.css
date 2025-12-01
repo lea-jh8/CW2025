@@ -70,6 +70,15 @@
     -fx-text-fill: white;
 }
 
+.pauseButton{
+    -fx-min-width: 50px;
+    -fx-min-height: 50px;
+    -fx-background-image: url("/pause_icon.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+}
 
 .pauseMenu{
     -fx-font-family: "Let's go Digital";

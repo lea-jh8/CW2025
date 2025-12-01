@@ -22,6 +22,13 @@
 
     <!-- RHS: Score and Next Brick Display -->
     <VBox layoutX="300" layoutY="50" alignment="TOP_CENTER">
+
+        <Button styleClass="pauseButton" onAction="#pauseGame">
+            <VBox.margin>
+                <Insets top="30"/>
+            </VBox.margin>
+        </Button>
+
         <Label text="Score"
                styleClass="scoreLabel"/>
 
@@ -31,8 +38,6 @@
             </VBox.margin>
         </Text>
 
-
-
         <Label text="Next" styleClass="scoreClass">
             <VBox.margin>
                 <Insets top="30"/>
@@ -41,11 +46,6 @@
 
         <GridPane fx:id="brickPanel" vgap="1" hgap="1"/>
 
-        <Button text="Pause" onAction="#pauseGame">
-            <VBox.margin>
-                <Insets top="30"/>
-            </VBox.margin>
-        </Button>
     </VBox>
 
     <!-- Pause Menu -->
