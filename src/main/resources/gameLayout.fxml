@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Text?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
 <Pane fx:controller="com.comp2042.GuiController"
       xmlns:fx="http://javafx.com/fxml"
       stylesheets="@window_style.css">
@@ -51,8 +52,8 @@
     <!-- Pause Menu -->
     <BorderPane fx:id="pauseMenuPanel"
                 styleClass="pauseMenu"
-                layoutX="20" layoutY="20"
-                prefWidth="125" prefHeight="351"
+                layoutX="80" layoutY="150"
+                prefWidth="350" prefHeight="300"
                 visible="false">
 
         <!-- Top section: current score -->
@@ -74,26 +75,20 @@
         <!-- Bottom section: Control Buttons -->
         <bottom>
             <HBox spacing="10" alignment="CENTER">
-                <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
-                    <Button text="Continue"
-                            onAction="#continueGame"
-                            styleClass="menuButton"/>
-                    <Button text="Restart"
-                            onAction="#restartGame"
-                            styleClass="menuButton"/>
-                    <Button text="Quit"
-                            onAction="#quitGame"
-                            styleClass="menuButton"/>
-                    <padding>
-                        <Insets top="10" bottom="10"/>
-                    </padding>
-                </VBox>
+                <Button onAction="#continueGame"
+                        styleClass="continueButton"/>
+                <Button onAction="#restartGame"
+                        styleClass="restartButton"/>
+                <Button onAction="#quitGame"
+                        styleClass="quitButton"/>
                 <padding>
-                    <Insets left="20" right="20" bottom="20"/>
+                    <Insets top="10" bottom="10"/>
+                </padding>
+                <padding>
+                    <Insets top="20" left="20" right="20" bottom="20"/>
                 </padding>
             </HBox>
         </bottom>
-
     </BorderPane>
 
 

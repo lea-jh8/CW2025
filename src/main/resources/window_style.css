@@ -15,7 +15,7 @@
 }
 
 .nextBrickLabel {
-    -fx-font-family: "Let's go Digital";
+    -fx-font-family: "Georgia";
     -fx-padding: 20px 0 0 0;
     -fx-font-size: 16px;
     -fx-text-fill: yellow;
@@ -66,8 +66,8 @@
 .scoreClass{
     -fx-font-family: "Let's go Digital";
     -fx-font-size: 38;
-    -fx-fill: white;
-    -fx-text-fill: white;
+    -fx-fill: black;
+    -fx-text-fill: black;
 }
 
 .pauseButton{
@@ -81,20 +81,49 @@
 }
 
 .pauseMenu{
-    -fx-font-family: "Let's go Digital";
-    -fx-font-size: 20;
-    -fx-fill: white;
+    -fx-background-color: #A9A9A9;
+    -fx-background-radius: 30;
+    -fx-border-color: black;
+    -fx-border-width: 2;
+    -fx-border-radius: 30;
     -fx-alignment: center;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0)
 }
 
 .pausedTitle{
-    -fx-font-family: "Let's go Digital";
-    -fx-font-size: 20;
+    -fx-font-family: "Georgia";
+    -fx-font-size: 25;
     -fx-font-weight: bold;
     -fx-alignment: center;
+    -fx-text-fill: black;
 }
 
-.menuButton{
-    -fx-font-family: "Let's go Digital";
-    -fx-font-size: 14;
+.continueButton{
+    -fx-min-width: 50px;
+    -fx-min-height: 50px;
+    -fx-background-image: url("/continue_icon.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+}
+
+.restartButton{
+    -fx-min-width: 50px;
+    -fx-min-height: 50px;
+    -fx-background-image: url("/restart_icon.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+}
+
+.quitButton{
+    -fx-min-width: 50px;
+    -fx-min-height: 50px;
+    -fx-background-image: url("/quit_icon.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
 }
