@@ -11,8 +11,10 @@
 
 .gameBoard {
     -fx-border-color: #2A5058;
-    -fx-border-width: 10px;
-    -fx-border-radius: 10px;
+    -fx-border-width: 5px;
+    -fx-border-radius: 5px;
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+    -fx-background-radius: 8px;
 }
 
 .scoreLabel{
@@ -67,6 +69,7 @@
 .gameOverStyle {
     -fx-font-family: "Let's go Digital";
     -fx-font-size: 48;
+    -fx-fill: red;
     -fx-text-fill: red;
 }
 
