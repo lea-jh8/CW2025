@@ -1,13 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<?import com.comp2042.GameOverPanel?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Text?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.canvas.Canvas?>
 <Pane fx:controller="com.comp2042.GuiController"
       xmlns:fx="http://javafx.com/fxml"
       stylesheets="@window_style.css">
@@ -19,7 +15,6 @@
             <GridPane fx:id="gamePanel" hgap="1" vgap="1" />
         </center>
     </BorderPane>
-
 
     <!-- RHS: Score and Next Brick Display -->
     <VBox layoutX="300" layoutY="50" alignment="TOP_CENTER">
@@ -33,7 +28,7 @@
         <Label text="Score"
                styleClass="scoreLabel"/>
 
-        <Text fx:id="scoreValue" text="000000" styleClass="scoreClass">
+        <Text fx:id="scoreValue" styleClass="scoreClass">
             <VBox.margin>
                 <Insets top="10" bottom="20"/>
             </VBox.margin>
@@ -47,8 +42,6 @@
                   prefHeight="100" prefWidth="100"
                   alignment="CENTER">
         </GridPane>
-
-
 
     </VBox>
 
@@ -94,10 +87,44 @@
         </bottom>
     </BorderPane>
 
-
-    <Group fx:id="groupNotification" layoutX="14" layoutY="203">
+    <Group fx:id="groupNotification"
+           layoutX="14" layoutY="203">
         <VBox alignment="CENTER">
-            <GameOverPanel fx:id="gameOverPanel"/>
+            <!-- Game Over Panel -->
+            <BorderPane fx:id="gameOverPanel"
+                        styleClass="pauseMenu"
+                        layoutX="80" layoutY="150"
+                        prefWidth="350" prefHeight="300">
+                <!-- Top: GAME OVER -->
+                <top>
+                    <Text text="GAME OVER"
+                          styleClass="gameOverStyle"
+                          BorderPane.alignment="CENTER"/>
+                </top>
+                <!-- Centre: Final Score -->
+                <center>
+                    <VBox alignment="CENTER" spacing="10">
+                        <Label text="Score"
+                               styleClass="scoreLabel"/>
+                        <Text fx:id="finalScore" text="000000" styleClass="scoreClass"/>
+                    </VBox>
+                </center>
+                <!-- Bottom: Button Controls -->
+                <bottom>
+                    <HBox spacing="10" alignment="CENTER">
+                        <Button onAction="#restartGame"
+                                styleClass="restartButton"/>
+                        <Button onAction="#quitGame"
+                                styleClass="quitButton"/>
+                        <padding>
+                            <Insets top="10" bottom="10"/>
+                        </padding>
+                        <padding>
+                            <Insets top="20" left="20" right="20" bottom="20"/>
+                        </padding>
+                    </HBox>
+                </bottom>
+            </BorderPane>
         </VBox>
     </Group>
 

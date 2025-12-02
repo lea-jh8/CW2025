@@ -49,10 +49,13 @@ public class GuiController implements Initializable {
     private Text pauseScoreText;
 
     @FXML
+    public Text finalScore;
+
+    @FXML
     private Text scoreValue;
 
     @FXML
-    private GameOverPanel gameOverPanel;
+    private BorderPane gameOverPanel;
 
     private Rectangle[][] displayMatrix;
 
@@ -61,8 +64,6 @@ public class GuiController implements Initializable {
     private Rectangle[][] rectangles;
 
     private Timeline timeLine;
-
-    private Rectangle[][] nextBrickRectangles;
 
     private int[][] gridData;
 
@@ -101,7 +102,7 @@ public class GuiController implements Initializable {
                 }
             }
         });
-        gameOverPanel.setVisible(false);
+        groupNotification.setVisible(false);
 
         final Reflection reflection = new Reflection();
         reflection.setFraction(0.8);
@@ -258,7 +259,6 @@ public class GuiController implements Initializable {
             DownData downData = eventListener.onDownEvent(event);
 
             refreshGameBackground(this.gridData);
-
             refreshFallingBrick(downData.getViewData());
             refreshNextBrick(downData.getViewData());
 
@@ -279,25 +279,21 @@ public class GuiController implements Initializable {
         scoreValue.textProperty().bind(integerProperty.asString());
     }
 
-    public void setGroupNotification (String pointsAwarded) {
-        NotificationPanel notification = new NotificationPanel(pointsAwarded);
-
-        notification.setLayoutX(15);
-        notification.setLayoutY(15);
-
-    }
-
-
-
     public void gameOver() {
         timeLine.stop();
+        groupNotification.setVisible(true);
         gameOverPanel.setVisible(true);
+        groupNotification.toFront();
+        pauseMenuPanel.setVisible(false);
+        isPause.setValue(Boolean.FALSE);
         isGameOver.setValue(Boolean.TRUE);
+        finalScore.setText(scoreValue.getText());
     }
 
     public void newGame(ActionEvent actionEvent) {
         timeLine.stop();
         gameOverPanel.setVisible(false);
+        pauseMenuPanel.setVisible(false);
         eventListener.createNewGame();
         gamePanel.requestFocus();
         timeLine.play();
@@ -307,8 +303,9 @@ public class GuiController implements Initializable {
 
     public void pauseGame(ActionEvent actionEvent) {
         pauseMenuPanel.setVisible(true);
-        gameOverPanel.setVisible(false);
+        groupNotification.setVisible(false);
         isPause.setValue(Boolean.TRUE);
+        isGameOver.setValue(Boolean.FALSE);
         eventListener.pauseGame();
         if (pauseScoreText != null && scoreValue != null) {
             pauseScoreText.setText(scoreValue.getText());
@@ -327,15 +324,18 @@ public class GuiController implements Initializable {
     public void restartGame(ActionEvent actionEvent) {
         timeLine.stop();
         pauseMenuPanel.setVisible(false);
-        timeLine.play();
+        groupNotification.setVisible(false);
+        gameOverPanel.setVisible(false);
         isPause.setValue(Boolean.FALSE);
         isGameOver.setValue(Boolean.FALSE);
-        eventListener.initGame();
+        eventListener.initGame(); //Reset board
+        timeLine.play(); //Restart loop
+        gamePanel.requestFocus();
     }
 
     public void quitGame(ActionEvent actionEvent) {
         timeLine.stop();
-        gameOverPanel.setVisible(true);
+        gameOverPanel.setVisible(false);
         isPause.setValue(Boolean.FALSE);
         isGameOver.setValue(Boolean.FALSE);
         eventListener.quitGame();
