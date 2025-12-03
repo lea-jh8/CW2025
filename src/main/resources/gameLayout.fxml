@@ -25,10 +25,17 @@
             </VBox.margin>
         </Button>
 
-        <Label text="Score"
+        <Label text="Current score: "
                styleClass="scoreLabel"/>
-
         <Text fx:id="scoreValue" styleClass="scoreClass">
+            <VBox.margin>
+                <Insets top="10" bottom="20"/>
+            </VBox.margin>
+        </Text>
+
+        <Label text="High Score: "
+               styleClass="scoreLabel"/>
+        <Text fx:id="highScore" styleClass="scoreClass">
             <VBox.margin>
                 <Insets top="10" bottom="20"/>
             </VBox.margin>

@@ -55,6 +55,9 @@ public class GuiController implements Initializable {
     private Text scoreValue;
 
     @FXML
+    public Text highScore;
+
+    @FXML
     private BorderPane gameOverPanel;
 
     private Rectangle[][] displayMatrix;
@@ -103,6 +106,8 @@ public class GuiController implements Initializable {
             }
         });
         groupNotification.setVisible(false);
+
+        updateHighScore();
 
         final Reflection reflection = new Reflection();
         reflection.setFraction(0.8);
@@ -279,6 +284,11 @@ public class GuiController implements Initializable {
         scoreValue.textProperty().bind(integerProperty.asString());
     }
 
+    public void updateHighScore() {
+        int topScore = ScoreManage.getTopScore();
+        highScore.setText(String.valueOf(topScore));
+    }
+
     public void gameOver() {
         timeLine.stop();
         groupNotification.setVisible(true);
@@ -288,6 +298,12 @@ public class GuiController implements Initializable {
         isPause.setValue(Boolean.FALSE);
         isGameOver.setValue(Boolean.TRUE);
         finalScore.setText(scoreValue.getText());
+
+        String cleanText = scoreValue.getText().replaceAll("[^0-9]", "");
+        if (!cleanText.isEmpty()) {
+            int actualScore = Integer.parseInt(cleanText);
+            ScoreManage.saveScore(actualScore);
+        }
     }
 
     public void newGame(ActionEvent actionEvent) {
@@ -328,6 +344,7 @@ public class GuiController implements Initializable {
         gameOverPanel.setVisible(false);
         isPause.setValue(Boolean.FALSE);
         isGameOver.setValue(Boolean.FALSE);
+        updateHighScore();
         eventListener.initGame(); //Reset board
         timeLine.play(); //Restart loop
         gamePanel.requestFocus();
