@@ -18,13 +18,13 @@
 }
 
 .scoreLabel{
-    -fx-font-family: "Georgia";
+    -fx-font-family: "PressStart2P";
     -fx-font-size: 25px;
     -fx-text-fill: black;
 }
 
 .nextBrickLabel {
-    -fx-font-family: "Georgia";
+    -fx-font-family: "PressStart2P";
     -fx-padding: 20px 0 0 0;
     -fx-font-size: 25px;
     -fx-text-fill: black;
@@ -39,7 +39,7 @@
     -fx-background-insets: 0, 1, 4, 5, 6;
     -fx-background-radius: 9, 8, 5, 4, 3;
     -fx-padding: 8;
-    -fx-font-family: "Let's go Digital";
+    -fx-font-family: "VT323";
     -fx-font-size: 22px;
     -fx-font-weight: bold;
     -fx-text-fill: white;
@@ -67,14 +67,14 @@
 }
 
 .gameOverStyle {
-    -fx-font-family: "Let's go Digital";
+    -fx-font-family: "RussoOne";
     -fx-font-size: 48;
     -fx-fill: red;
     -fx-text-fill: red;
 }
 
 .scoreClass{
-    -fx-font-family: "Let's go Digital";
+    -fx-font-family: "VT323";
     -fx-font-size: 38;
     -fx-fill: black;
     -fx-text-fill: black;
@@ -101,7 +101,7 @@
 }
 
 .pausedTitle{
-    -fx-font-family: "Georgia";
+    -fx-font-family: "RussoOne";
     -fx-font-size: 25;
     -fx-font-weight: bold;
     -fx-alignment: center;
