@@ -3,6 +3,13 @@
     -fx-background-size: cover;
 }
 
+.titleMain {
+    -fx-font-family: "Kode Mono Bold";
+    -fx-font-size: 80px;
+    -fx-text-fill: linear-gradient(to right, #ffff00, #ff0000, #0000ff);
+    -fx-effect: dropshadow(one-pass-box, white, 0, 0, 5, 0);
+}
+
 .nextBrick {
     -fx-border-width: 2px;
     -fx-border-color: black;
@@ -18,13 +25,13 @@
 }
 
 .scoreLabel{
-    -fx-font-family: "PressStart2P";
+    -fx-font-family: "Press Start 2P Regular";
     -fx-font-size: 25px;
     -fx-text-fill: black;
 }
 
 .nextBrickLabel {
-    -fx-font-family: "PressStart2P";
+    -fx-font-family: "Press Start 2P Regular";
     -fx-padding: 20px 0 0 0;
     -fx-font-size: 25px;
     -fx-text-fill: black;
@@ -39,8 +46,9 @@
     -fx-background-insets: 0, 1, 4, 5, 6;
     -fx-background-radius: 9, 8, 5, 4, 3;
     -fx-padding: 8;
-    -fx-font-family: "VT323";
+    -fx-font-family: "Courier Prime";
     -fx-font-size: 22px;
+    -fx-pref-width: 200px;
     -fx-font-weight: bold;
     -fx-text-fill: white;
     -fx-effect: dropshadow(three-pass-box, rgba(255, 255, 255, 0.2), 1, 0.0, 0, 1);
@@ -67,14 +75,14 @@
 }
 
 .gameOverStyle {
-    -fx-font-family: "RussoOne";
+    -fx-font-family: "Russo One Regular";
     -fx-font-size: 48;
     -fx-fill: red;
     -fx-text-fill: red;
 }
 
 .scoreClass{
-    -fx-font-family: "VT323";
+    -fx-font-family: "VT323 Regular";
     -fx-font-size: 38;
     -fx-fill: black;
     -fx-text-fill: black;
@@ -101,7 +109,7 @@
 }
 
 .pausedTitle{
-    -fx-font-family: "RussoOne";
+    -fx-font-family: "Russo One Regular";
     -fx-font-size: 25;
     -fx-font-weight: bold;
     -fx-alignment: center;

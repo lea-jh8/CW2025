@@ -77,8 +77,9 @@ public class GuiController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Font.loadFont(getClass().getClassLoader().getResource("VT323.ttf").toExternalForm(), 38);
-        Font.loadFont(getClass().getClassLoader().getResource("PressStart2P.ttf").toExternalForm(), 388);
+        Font.loadFont(getClass().getClassLoader().getResource("PressStart2P.ttf").toExternalForm(), 38);
         Font.loadFont(getClass().getClassLoader().getResource("RussoOne.ttf").toExternalForm(), 38);
+
         gamePanel.setFocusTraversable(true);
         gamePanel.requestFocus();
         gamePanel.setOnKeyPressed(new EventHandler<KeyEvent>() {

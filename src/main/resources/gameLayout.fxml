@@ -6,7 +6,8 @@
 <?import javafx.geometry.Insets?>
 <Pane fx:controller="com.comp2042.GuiController"
       xmlns:fx="http://javafx.com/fxml"
-      stylesheets="@window_style.css">
+      stylesheets="@window_style.css"
+      prefWidth="600" prefHeight="700">
 
     <!-- LHS: Main Game Board -->
     <BorderPane styleClass="gameBoard" fx:id="gameBoard"
@@ -25,7 +26,7 @@
             </VBox.margin>
         </Button>
 
-        <Label text="Current score: "
+        <Label text="Current: "
                styleClass="scoreLabel"/>
         <Text fx:id="scoreValue" styleClass="scoreClass">
             <VBox.margin>
@@ -33,7 +34,7 @@
             </VBox.margin>
         </Text>
 
-        <Label text="High Score: "
+        <Label text="Highest: "
                styleClass="scoreLabel"/>
         <Text fx:id="highScore" styleClass="scoreClass">
             <VBox.margin>

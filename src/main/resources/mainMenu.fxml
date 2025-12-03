@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane fx:controller="com.comp2042.MainMenuController"
+            xmlns:fx="http://javafx.com/fxml"
+            stylesheets="@window_style.css"
+            prefWidth="600" prefHeight="700">
+    <!-- Top: Game Title -->
+    <top>
+        <Label text="TETRIS"
+               styleClass="titleMain"
+               BorderPane.alignment="CENTER">
+                <BorderPane.margin>
+                    <Insets top="80"/>
+                </BorderPane.margin>
+        </Label>
+    </top>
+    <!-- Buttons -->
+    <center>
+        <VBox spacing="10" alignment="CENTER">
+            <Button onAction="#startGame"
+                    text="Casual Mode"
+                    styleClass="ipad-dark-grey"/>
+
+            <Button onAction="#quitGame"
+                    text="Quit"
+                    styleClass="ipad-dark-grey"/>
+
+            <padding>
+                <Insets top="20" left="20" right="20" bottom="20"/>
+            </padding>
+        </VBox>
+    </center>
+
+</BorderPane>
