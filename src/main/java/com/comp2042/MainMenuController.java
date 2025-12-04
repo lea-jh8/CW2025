@@ -27,6 +27,7 @@ public class MainMenuController {
     @FXML
     public void startGame(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/gameLayout.fxml"));
+
         Parent gameRoot = loader.load();
 
         GuiController c = loader.getController();

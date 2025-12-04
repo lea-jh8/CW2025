@@ -26,7 +26,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import java.awt.*;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -81,9 +81,9 @@ public class GuiController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Font.loadFont(getClass().getClassLoader().getResource("VT323.ttf").toExternalForm(), 38);
-        Font.loadFont(getClass().getClassLoader().getResource("PressStart2P.ttf").toExternalForm(), 38);
-        Font.loadFont(getClass().getClassLoader().getResource("RussoOne.ttf").toExternalForm(), 38);
+        Font.loadFont(getClass().getResource("/fonts/VT323.ttf").toExternalForm(), 38);
+        Font.loadFont(getClass().getResource("/fonts/PressStart2P.ttf").toExternalForm(), 38);
+        Font.loadFont(getClass().getResource("/fonts/RussoOne.ttf").toExternalForm(), 38);
 
         gamePanel.setFocusTraversable(true);
         gamePanel.requestFocus();

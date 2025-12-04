@@ -93,7 +93,7 @@
 .pauseButton{
     -fx-min-width: 50px;
     -fx-min-height: 50px;
-    -fx-background-image: url("/pause_icon.png");
+    -fx-background-image: url("/icons/pause_icon.png");
     -fx-background-size: cover;
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
@@ -121,7 +121,7 @@
 .continueButton{
     -fx-min-width: 50px;
     -fx-min-height: 50px;
-    -fx-background-image: url("/continue_icon.png");
+    -fx-background-image: url("/icons/continue_icon.png");
     -fx-background-size: cover;
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
@@ -131,7 +131,7 @@
 .restartButton{
     -fx-min-width: 50px;
     -fx-min-height: 50px;
-    -fx-background-image: url("/restart_icon.png");
+    -fx-background-image: url("/icons/restart_icon.png");
     -fx-background-size: cover;
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
@@ -141,7 +141,7 @@
 .mainMenuButton{
     -fx-min-width: 50px;
     -fx-min-height: 50px;
-    -fx-background-image: url("/home_icon.png");
+    -fx-background-image: url("/icons/home_icon.png");
     -fx-background-size: cover;
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
@@ -166,7 +166,7 @@
 .quitButton{
     -fx-min-width: 50px;
     -fx-min-height: 50px;
-    -fx-background-image: url("/quit_icon.png");
+    -fx-background-image: url("/icons/quit_icon.png");
     -fx-background-size: cover;
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;

@@ -19,8 +19,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        Font.loadFont(getClass().getResourceAsStream("/CourierPrime.ttf"), 35);
-        Font.loadFont(getClass().getResourceAsStream("/KodeMono.ttf"), 35);
+        Font.loadFont(getClass().getResourceAsStream("/fonts/CourierPrime.ttf"), 35);
+        Font.loadFont(getClass().getResourceAsStream("/fonts/KodeMono.ttf"), 35);
 
         URL location = getClass().getClassLoader().getResource("mainMenu.fxml");
         ResourceBundle resources = null;
