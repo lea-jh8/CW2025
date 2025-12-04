@@ -19,6 +19,8 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
@@ -37,6 +39,9 @@ public class GuiController implements Initializable {
 
     @FXML
     private GridPane gamePanel;
+
+    @FXML
+    private Pane gameRoot;
 
     @FXML
     private BorderPane gameBoard;
@@ -84,6 +89,13 @@ public class GuiController implements Initializable {
         Font.loadFont(getClass().getResource("/fonts/VT323.ttf").toExternalForm(), 38);
         Font.loadFont(getClass().getResource("/fonts/PressStart2P.ttf").toExternalForm(), 38);
         Font.loadFont(getClass().getResource("/fonts/RussoOne.ttf").toExternalForm(), 38);
+
+        if (gameRoot != null) {
+            String theme = ThemeManage.getCurrentBackground();
+
+            gameRoot.setStyle("-fx-background-image: url('" + theme + "');" +
+                    "-fx-background-size: cover;");
+        }
 
         gamePanel.setFocusTraversable(true);
         gamePanel.requestFocus();
@@ -306,7 +318,7 @@ public class GuiController implements Initializable {
         isPause.setValue(Boolean.FALSE);
         isGameOver.setValue(Boolean.TRUE);
         finalScore.setText(scoreValue.getText());
-
+        // Display score
         String cleanText = scoreValue.getText().replaceAll("[^0-9]", "");
         if (!cleanText.isEmpty()) {
             int actualScore = Integer.parseInt(cleanText);

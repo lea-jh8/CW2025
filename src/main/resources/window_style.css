@@ -1,8 +1,3 @@
-.root {
-    -fx-background-image: url("/background_image.png");
-    -fx-background-size: cover;
-}
-
 .titleMain {
     -fx-font-family: "Kode Mono Bold";
     -fx-font-size: 80px;
@@ -160,6 +155,13 @@
     -fx-font-family: "Courier Prime";
     -fx-font-size: 80px;
     -fx-text-fill: #03AC13;
+    -fx-alignment: center;
+}
+
+.selectLabel{
+    -fx-font-family: "Courier Prime";
+    -fx-font-size: 50px;
+    -fx-text-fill: black;
     -fx-alignment: center;
 }
 

@@ -4,7 +4,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
-<BorderPane fx:controller="com.comp2042.MainMenuController"
+<BorderPane fx:id="rootPane"
+            fx:controller="com.comp2042.MainMenuController"
             xmlns:fx="http://javafx.com/fxml"
             stylesheets="@window_style.css"
             prefWidth="600" prefHeight="700">
@@ -23,7 +24,10 @@
         <StackPane>
             <VBox fx:id="menuBox" spacing="10" alignment="CENTER">
                 <Button onAction="#startGame"
-                        text="Casual Mode"
+                        text="Play"
+                        styleClass="ipad-dark-grey"/>
+                <Button onAction="#changeTheme"
+                        text="Theme"
                         styleClass="ipad-dark-grey"/>
                 <Button onAction="#loadLeaderboard"
                         text="Leaderboard"
@@ -34,6 +38,29 @@
                 <padding>
                     <Insets top="20" left="20" right="20" bottom="20"/>
                 </padding>
+            </VBox>
+
+            <VBox fx:id="themeRoot"
+                  visible="false"
+                  spacing="10"
+                  maxWidth="300" maxHeight="400"
+                  styleClass="leaderboardPanel">
+                <Label text="Select:" styleClass="selectLabel"/>
+                <!-- Buttons for different themes -->
+                <Button onAction="#setThemeDefault"
+                        text="Default"
+                        styleClass="ipad-dark-grey"/>
+                <Button onAction="#setThemeRetro"
+                        text="Retro"
+                        styleClass="ipad-dark-grey"/>
+                <Button onAction="#setThemeForest"
+                        text="Forest"
+                        styleClass="ipad-dark-grey"/>
+                <Button onAction="#setThemeCute"
+                        text="Cute"
+                        styleClass="ipad-dark-grey"/>
+                <Button onAction="#backToMenu"
+                        styleClass="mainMenuButton"/>
             </VBox>
 
             <VBox fx:id="leaderboardRoot"

@@ -4,7 +4,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Text?>
 <?import javafx.geometry.Insets?>
-<Pane fx:controller="com.comp2042.GuiController"
+<Pane fx:id="gameRoot"
+      fx:controller="com.comp2042.GuiController"
       xmlns:fx="http://javafx.com/fxml"
       stylesheets="@window_style.css"
       prefWidth="600" prefHeight="700">
