@@ -29,6 +29,10 @@ public class ScoreManage {
         return scores.get(0);
     }
 
+    public static List<Integer> getTopScores() {
+        return loadScores();
+    }
+
     private static List<Integer> loadScores() {
         List<Integer> scores = new ArrayList<>();
         File file = new File(FILE_NAME);

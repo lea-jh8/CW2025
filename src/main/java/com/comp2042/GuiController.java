@@ -8,8 +8,12 @@ import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Group;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.effect.Reflection;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -20,9 +24,10 @@ import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import javafx.util.Duration;
-
 import java.awt.*;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -353,6 +358,23 @@ public class GuiController implements Initializable {
         gamePanel.requestFocus();
     }
 
+    public void backToMain(ActionEvent event) throws IOException {
+        timeLine.stop();
+        URL location = getClass().getClassLoader().getResource("mainMenu.fxml");
+        ResourceBundle resources = null;
+        FXMLLoader fxmlLoader = new FXMLLoader(location, resources);
+        Parent root = fxmlLoader.load();
+
+        Node source = (Node) event.getSource();
+        Scene currentScene = source.getScene();
+        Stage currentStage = (Stage) currentScene.getWindow();
+
+        Scene gameScene = new Scene(root);
+        gameScene.getStylesheets().add(getClass().getResource("/window_style.css").toExternalForm());
+        currentStage.setScene(gameScene);
+        currentStage.show();
+    }
+
     public void quitGame(ActionEvent actionEvent) {
         timeLine.stop();
         gameOverPanel.setVisible(false);
@@ -360,4 +382,5 @@ public class GuiController implements Initializable {
         isGameOver.setValue(Boolean.FALSE);
         eventListener.quitGame();
     }
+
 }

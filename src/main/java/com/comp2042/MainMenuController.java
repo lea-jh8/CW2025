@@ -3,17 +3,26 @@ package com.comp2042;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.util.List;
 
 public class MainMenuController {
+
+    @FXML
+    private VBox leaderboardRoot;
+
+    @FXML
+    private VBox menuBox;
+
+    @FXML
+    private VBox scoreList;
 
     @FXML
     public void startGame(ActionEvent event) throws IOException {
@@ -36,6 +45,28 @@ public class MainMenuController {
         currentStage.show();
 
         gameRoot.requestFocus();
+    }
+
+    @FXML
+    public void loadLeaderboard(ActionEvent actionEvent) {
+        scoreList.getChildren().clear();
+        List<Integer> scores = ScoreManage.getTopScores();
+
+        for (int i = 0; i < scores.size() && i < 3; i++) {
+            int score = scores.get(i);
+            String text = String.format("#%d: %d", i + 1, score);
+            Label scoreLabel = new Label(text);
+            scoreLabel.getStyleClass().add("LeaderBoardEntry");
+            scoreList.getChildren().add(scoreLabel);
+        }
+
+        menuBox.setVisible(false);
+        leaderboardRoot.setVisible(true);
+    }
+
+    public void backToMenu(ActionEvent actionEvent) {
+        leaderboardRoot.setVisible(false);
+        menuBox.setVisible(true);
     }
 
     @FXML

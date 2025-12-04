@@ -20,19 +20,34 @@
     </top>
     <!-- Buttons -->
     <center>
-        <VBox spacing="10" alignment="CENTER">
-            <Button onAction="#startGame"
-                    text="Casual Mode"
-                    styleClass="ipad-dark-grey"/>
+        <StackPane>
+            <VBox fx:id="menuBox" spacing="10" alignment="CENTER">
+                <Button onAction="#startGame"
+                        text="Casual Mode"
+                        styleClass="ipad-dark-grey"/>
+                <Button onAction="#loadLeaderboard"
+                        text="Leaderboard"
+                        styleClass="ipad-dark-grey"/>
+                <Button onAction="#quitGame"
+                        text="Quit"
+                        styleClass="ipad-dark-grey"/>
+                <padding>
+                    <Insets top="20" left="20" right="20" bottom="20"/>
+                </padding>
+            </VBox>
 
-            <Button onAction="#quitGame"
-                    text="Quit"
-                    styleClass="ipad-dark-grey"/>
+            <VBox fx:id="leaderboardRoot"
+                  visible="false"
+                  spacing="10"
+                  styleClass="leaderboardPanel"
+                  maxWidth="300" maxHeight="400">
+                <Label text="TOP" styleClass="leaderboardScore"/>
+                <VBox fx:id="scoreList" spacing="5" alignment="CENTER" styleClass="scoreClass"/>
+                <Button onAction="#backToMenu"
+                        styleClass="mainMenuButton"/>
+            </VBox>
+        </StackPane>
 
-            <padding>
-                <Insets top="20" left="20" right="20" bottom="20"/>
-            </padding>
-        </VBox>
     </center>
 
 </BorderPane>
